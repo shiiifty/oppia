@@ -1984,6 +1984,7 @@ class ContributorCertificateInfoDict(TypedDict):
     team_lead: str
     contribution_hours: str
     language: Optional[str]
+    contributor_name: str
 
 
 class ContributorCertificateInfo:
@@ -1998,12 +1999,14 @@ class ContributorCertificateInfo:
         team_lead: str,
         contribution_hours: str,
         language: Optional[str],
+        contributor_name: str = '',
     ) -> None:
         self.from_date = from_date
         self.to_date = to_date
         self.team_lead = team_lead
         self.contribution_hours = contribution_hours
         self.language = language
+        self.contributor_name = contributor_name
 
     def to_dict(self) -> ContributorCertificateInfoDict:
         """Returns a dict representation of a ContributorCertificateInfo
@@ -2019,6 +2022,7 @@ class ContributorCertificateInfo:
             'team_lead': self.team_lead,
             'contribution_hours': self.contribution_hours,
             'language': self.language,
+            'contributor_name': self.contributor_name,
         }
 
 

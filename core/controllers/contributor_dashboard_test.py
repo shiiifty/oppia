@@ -2769,6 +2769,7 @@ class ContributorAllStatsSummariesHandlerTest(test_utils.GenericTestBase):
                 'contribution_hours': '0.01',
                 'team_lead': feconf.TRANSLATION_TEAM_LEAD,
                 'language': 'Hindi',
+                'contributor_name': self.OWNER_USERNAME,
             },
         )
 

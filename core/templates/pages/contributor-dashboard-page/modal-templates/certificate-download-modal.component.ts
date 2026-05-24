@@ -195,7 +195,11 @@ export class CertificateDownloadModalComponent {
       ctx.font = '40px Capriola';
       ctx.fillStyle = '#00645C';
       linePosition += 100;
-      ctx.fillText(this.username, this.CERTIFICATE_MID_POINT, linePosition);
+      ctx.fillText(
+        info.contributor_name,
+        this.CERTIFICATE_MID_POINT,
+        linePosition
+      );
 
       ctx.font = '28px Capriola';
       ctx.fillStyle = '#8F9899';
@@ -221,7 +225,7 @@ export class CertificateDownloadModalComponent {
           {
             text:
               'This certificate confirms that ' +
-              this.username +
+              info.contributor_name +
               ' has contributed ' +
               info.contribution_hours +
               ' hours ' +
@@ -259,7 +263,7 @@ export class CertificateDownloadModalComponent {
           {
             text:
               'This certificate confirms that ' +
-              this.username +
+              info.contributor_name +
               ' has contributed ' +
               info.contribution_hours +
               ' hours',

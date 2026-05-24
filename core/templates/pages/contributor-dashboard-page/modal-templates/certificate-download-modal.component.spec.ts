@@ -61,6 +61,7 @@ describe('Contributor Certificate Download Modal Component', () => {
     team_lead: 'Test User',
     contribution_hours: 1.0,
     language: 'Hindi',
+    contributor_name: 'Test User',
   };
   const certificateDataResponse: ContributorCertificateResponse = {
     certificate_data: certificateData,
@@ -117,7 +118,7 @@ describe('Contributor Certificate Download Modal Component', () => {
 
     component.downloadCertificate();
 
-    expect(component.errorsFound).toBeFalse();
+    expect(component.errorsFound).toBeFalsy();
     expect(
       contributionAndReviewService.downloadContributorCertificateAsync
     ).toHaveBeenCalled();
@@ -135,7 +136,7 @@ describe('Contributor Certificate Download Modal Component', () => {
 
     component.downloadCertificate();
 
-    expect(component.errorsFound).toBeFalse();
+    expect(component.errorsFound).toBeFalsy();
     expect(
       contributionAndReviewService.downloadContributorCertificateAsync
     ).toHaveBeenCalled();
@@ -164,7 +165,7 @@ describe('Contributor Certificate Download Modal Component', () => {
 
     component.validateDate();
 
-    expect(component.errorsFound).toBeTrue();
+    expect(component.errorsFound).toBeTruthy();
     expect(component.errorMessage).toEqual(
       "Please select a 'To' date that is not in the future."
     );
@@ -183,7 +184,7 @@ describe('Contributor Certificate Download Modal Component', () => {
 
     flushMicrotasks();
 
-    expect(component.errorsFound).toBeTrue();
+    expect(component.errorsFound).toBeTruthy();
     expect(component.errorMessage).toEqual(
       'There are no contributions for the given date range.'
     );
@@ -198,7 +199,7 @@ describe('Contributor Certificate Download Modal Component', () => {
 
     component.validateDate();
 
-    expect(component.errorsFound).toBeTrue();
+    expect(component.errorsFound).toBeTruthy();
     expect(component.errorMessage).toEqual('Invalid date range.');
   });
 
@@ -213,7 +214,7 @@ describe('Contributor Certificate Download Modal Component', () => {
 
     component.validateDate();
 
-    expect(component.errorsFound).toBeFalse();
+    expect(component.errorsFound).toBeFalsy();
     expect(component.errorMessage).toEqual('');
   });
 
